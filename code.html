@@ -93,27 +93,45 @@
         <div class="col-lg-8 col-12">
           <pre class="line-numbers">
                     <code class="language-js">
+
 // This is our controller
 function getValues() {
   //get the user's input
   //decide what to do with it
   let userInput = document.getElementById('message').value;
 
-  let reversedInput = reverseString(userInput);
+  let noPunctuationOrSpacing = userInput.toLowerCase().replace(
+    /[.,/#!$%^&*;:{}=-_`~() ]/g,
+    ""
+  );
+
+  let reversedInput = reverseString(noPunctuationOrSpacing);
 
   displayString(reversedInput);
 }
 
 // logic
-function reverseString(message) {
+function reverseString(messages) {
   //take a string, return that string in reverse
+  let userInput = document.getElementById("message").value;
+  let noPunctuationOrSpacing = userInput
+    .toLowerCase()
+    .replace(/[.,/#!$%^&*;:{}=-_`~() ]/g, "");
   let reversedMessage = ''
 
-  for (let index = message.length - 1; index >= 0; index--) {
-    reversedMessage += message[index];
+  for (let index = messages.length - 1; index >= 0; index--) {
+    reversedMessage = reversedMessage + messages[index];
   }
 
-  return reversedMessage
+  if (noPunctuationOrSpacing == reversedMessage) {
+    finalMessage = "Correct, " + userInput + " is a palindrome";
+  } else
+    finalMessage =
+      "Sorry, but it seems that " +
+      userInput +
+      " is not a palendrome, try again!";
+
+  return finalMessage
 }
 
 //view function
@@ -122,6 +140,7 @@ function displayString(reversedMessage) {
   document.getElementById('msg').textContent = reversedMessage;
   document.getElementById('alert').classList.remove('d-none');
 }
+
                     </code>
                 </pre>
         </div>

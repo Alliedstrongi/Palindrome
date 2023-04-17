@@ -5,27 +5,36 @@ function getValues() {
   //decide what to do with it
   let userInput = document.getElementById('message').value;
 
-  let reversedInput = reverseString(userInput);
+  let noPunctuationOrSpacing = userInput.toLowerCase().replace(
+    /[.,/#!$%^&*;:{}=-_`~() ]/g,
+    ""
+  );
+
+  let reversedInput = reverseString(noPunctuationOrSpacing);
 
   displayString(reversedInput);
 }
 
 // logic
-function reverseString(message) {
+function reverseString(messages) {
   //take a string, return that string in reverse
+  let userInput = document.getElementById("message").value;
+  let noPunctuationOrSpacing = userInput
+    .toLowerCase()
+    .replace(/[.,/#!$%^&*;:{}=-_`~() ]/g, "");
   let reversedMessage = ''
 
-  for (let index = message.length - 1; index >= 0; index--) {
-    reversedMessage += message[index];
+  for (let index = messages.length - 1; index >= 0; index--) {
+    reversedMessage = reversedMessage + messages[index];
   }
 
-  if (message = reversedMessage)
-
-    finalMessage = "Correct, that is a palindrome";
-
-  else 
-
-    finalMessage = "Sorry, but it seems that is not a palendrome, try again!";
+  if (noPunctuationOrSpacing == reversedMessage) {
+    finalMessage = "Correct, " + userInput + " is a palindrome";
+  } else
+    finalMessage =
+      "Sorry, but it seems that " +
+      userInput +
+      " is not a palendrome, try again!";
 
   return finalMessage
 }
