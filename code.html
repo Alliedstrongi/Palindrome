@@ -39,7 +39,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="/img/Pictures/2.png" height="30" class="mx-1" />Rotator</a
+            <img src="/img/ROTATOR.png" height="45" class="mx-1" />Rotator</a
           >
           <button
             class="navbar-toggler"
@@ -145,9 +145,20 @@ function displayString(reversedMessage) {
                 </pre>
         </div>
         <div class="col-lg-4 col-12">
-          <p>The code is structured in one function</p>
-          <h5>displayMessage</h5>
-          <p>Prints our the message</p>
+          <p>A brief overview of the code itself</p>
+          <h5><strong>How it works...</strong></h5>
+          <p>First we begin with our with our controller function. The purpose of this fuction is to pull everything from the html, then take the code
+            that has been changed later and put it in our view function.
+          </p>
+          <p>Next we see wihtin our "logic fuction" that we take the inital message from the html and compare it to the new message results(we will call this initial message m1). 
+            The new message results are produced by taking our original message (seperate from m1 we will call this original message m2) and flipping it around. We then compare m1
+            with m2 and see if they are the same. If they are then we get a message that our message is a palendrome, if not we recieve the message that it is not a palendrome.
+            It is important to say any and all characters that are not letters/numbers are removed in the code in order to find a result even if you typed
+            "tacocat!!!" then you would still get tacocat. This also works for capitalization.
+          </p>
+          <p>Lastly the code is moved back into our original function, then down to our view function. Where the code is sent to our HTML so that you can see all of it on the page!
+
+          </p>
         </div>
       </div>
     </main>
