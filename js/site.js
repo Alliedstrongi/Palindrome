@@ -19,7 +19,15 @@ function reverseString(message) {
     reversedMessage += message[index];
   }
 
-  return reversedMessage
+  if (message = reversedMessage)
+
+    finalMessage = "Correct, that is a palindrome";
+
+  else 
+
+    finalMessage = "Sorry, but it seems that is not a palendrome, try again!";
+
+  return finalMessage
 }
 
 //view function
